@@ -23,12 +23,20 @@
       <div class="col-xs-1">1</div>
       <div class="col-xs-2">2</div>
       <div class="col-xs-2">2</div>
-      <div class="col-xs-3">3</div>
-    </div>            
+      <div class="col-xs-3 add_place_box hide">
+      <div class="btn btn-danger btn-xs pull-right" id="addPlaceBtn">Удалить место</div>
+      </div>
+    </div>   
+
+    <div class="row" id="cargoValuesBox">
+      <div class="col-xs-12">
+        <div class="btn btn-default pull-right" id="addPlaceBtn">Добавить место</div>
+      </div>
+    </div>             
 
     <div class="row" id="submitBox">
       <div class="col-xs-12">
-        <div class="btn btn-default" id="submitBtn">Рассчитать</div>
+        <div class="btn btn-primary" id="submitBtn">Рассчитать</div>
       </div>
     </div>        
   </form>

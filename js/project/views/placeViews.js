@@ -1,7 +1,8 @@
 APP.PlaceView = Backbone.View.extend({   
 
-  initialize: function() {      
+  initialize: function(addPlaceBtn) {      
     this.model = new APP.PlaceModel(); 
+    this.addPlaceBtn = addPlaceBtn ? true : false;
   },
 
   className: 'place_unit',
@@ -10,6 +11,7 @@ APP.PlaceView = Backbone.View.extend({
 
   render: function () {  
     this.$el.html(this.template());
+    this.$el.find('.addPlaceBtn').removeClass('hide');
     return this;
   } 
 
