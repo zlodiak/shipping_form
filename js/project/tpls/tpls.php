@@ -34,13 +34,13 @@
 
 <script type="text/template" id="placeTpl">
   <div class="row">
-    <div class="col-xs-1"><input type="text" class="form-control"></div>
-    <div class="col-xs-1"><input type="text" class="form-control"></div>
-    <div class="col-xs-1"><input type="text" class="form-control"></div>
-    <div class="col-xs-1"><input type="text" class="form-control"></div>
-    <div class="col-xs-1"><input type="text" class="form-control"></div>
-    <div class="col-xs-2"><input type="checkbox"></div>
-    <div class="col-xs-2"><input type="checkbox"></div>
+    <div class="col-xs-1"><input type="text" class="form-control" name="length_<%= idPlace %>" id="length_<%= idPlace %>"></div>
+    <div class="col-xs-1"><input type="text" class="form-control" name="length_<%= idPlace %>" id="length_<%= idPlace %>"></div>
+    <div class="col-xs-1"><input type="text" class="form-control" name="length_<%= idPlace %>" id="length_<%= idPlace %>"></div>
+    <div class="col-xs-1"><input type="text" class="form-control" name="length_<%= idPlace %>" id="length_<%= idPlace %>"></div>
+    <div class="col-xs-1"><input type="text" class="form-control" name="length_<%= idPlace %>" id="length_<%= idPlace %>"></div>
+    <div class="col-xs-2"><input type="checkbox" name="length_<%= idPlace %>" id="length_<%= idPlace %>"></div>
+    <div class="col-xs-2"><input type="checkbox" name="length_<%= idPlace %>" id="length_<%= idPlace %>"></div>
     <div class="col-xs-3 del_place_box hide">
       <div class="btn btn-danger btn-xs pull-right delete_place_btn">Удалить место</div>
     </div>

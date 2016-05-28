@@ -1,9 +1,9 @@
 APP.PlaceView = Backbone.View.extend({   
 
   initialize: function(addPlaceBtn) {  
-    var idPlace = APP.placesCollection.getNewIdPlace();
+    this.idPlace = APP.placesCollection.getNewIdPlace();
 
-    this.model = new APP.PlaceModel({idPlace: idPlace}); 
+    this.model = new APP.PlaceModel({idPlace: this.idPlace}); 
     APP.placesCollection.add(this.model);
 
     this.addPlaceBtn = addPlaceBtn ? false : true;
@@ -14,7 +14,7 @@ APP.PlaceView = Backbone.View.extend({
   template: _.template($('#placeTpl').html()),
 
   render: function () {  
-    this.$el.html(this.template());
+    this.$el.html(this.template({idPlace: this.idPlace}));
 
     if(this.addPlaceBtn == false) {
       this.$el.find('.del_place_box').removeClass('hide');
