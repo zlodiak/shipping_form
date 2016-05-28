@@ -1,7 +1,9 @@
 APP.CalcView = Backbone.View.extend({  
 
   initialize: function() {    
-    this.place = new APP.PlaceView(false);                    
+    APP.placesCollection = new APP.PlacesCollection();
+    this.place = new APP.PlaceView(false);  
+
     this.render();
   },    
 
