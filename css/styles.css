@@ -1,0 +1,86 @@
+/*
+INFO: 
+	project: calculator validation
+	browsers: opera/chrome/FF/ie9/safari
+	width: 
+	columns:
+	markup: Sergey Kalinin 06/2016 (prozaik81-2@yandex.ru)
+	use: jq, bootstrap, underscore, backbone, backbone-validation
+	desc: 	
+	version 2
+*/	
+
+/****************************************************************************** COMMON_STYLES */
+.shipp_calc .hide{
+	display: none !important;
+}
+
+.shipp_calc .show{
+	display: block !important;
+}
+
+.shipp_calc .not_valid{
+	border: 1px solid red;
+}
+
+.shipp_calc .valid{
+	border: 1px solid #ccc;
+}
+
+.shipp_calc .form-group {
+    margin-bottom: 0px;
+}
+
+.shipp_calc h2{
+	margin-top: 0;
+}
+
+.shipp_calc label:after {
+	content: ':';
+}
+
+.shipp_calc .help-block{
+	color: red;
+}
+
+.shipp_calc .size_visible_toggler{
+	text-decoration: underline;
+	font-weight: bold;
+
+	cursor: pointer;
+}
+
+.shipp_calc .header_widget{
+	display: inline-block;
+}
+
+.over_cargo_extra_rules_link_outer{
+	text-align: right;
+}
+
+	.over_cargo_extra_rules_link{
+		cursor: pointer;
+
+		text-decoration: underline;
+	}
+
+.lathing_widget small{
+	color: #999;
+}
+
+/****************************************************************************** GLOBAL_layout */
+
+
+
+
+/****************************************************************************** GLOBAL_blocks: payment_modal */
+.payment_modal .shipp_options .input-group{
+	margin-bottom: 20px;
+}
+
+.payment_modal .form-group{
+	margin-bottom: 15px;
+}
+.currency{
+	margin-left: 10px;
+}
