@@ -25,6 +25,7 @@ APP.PlaceView = Backbone.View.extend({
 
   delPlace: function() { 
     this.$el.find('.del_place_box').closest('.place_unit').remove();
+    this.model.destroy();
   },   
 
 });

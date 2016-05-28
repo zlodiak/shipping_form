@@ -34,7 +34,7 @@
 
 <script type="text/template" id="placeTpl">
   <div class="row">
-    <div class="col-xs-1">1</div>
+    <div class="col-xs-1"><input type="text" class="form-control"></div>
     <div class="col-xs-1">1</div>
     <div class="col-xs-1">1</div>
     <div class="col-xs-1">1</div>
