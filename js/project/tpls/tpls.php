@@ -24,7 +24,7 @@
       <div class="col-xs-2">2</div>
       <div class="col-xs-2">2</div>
       <div class="col-xs-3 add_place_box hide">
-      <div class="btn btn-danger btn-xs pull-right" id="addPlaceBtn">Удалить место</div>
+        <div class="btn btn-danger btn-xs pull-right" id="addPlaceBtn">Удалить место</div>
       </div>
     </div>   
 
