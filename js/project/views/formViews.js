@@ -5,6 +5,9 @@ APP.CalcView = Backbone.View.extend({
 
     new APP.PaymentModalView();
 
+    APP.placesCollection = new APP.PlacesCollection();
+    this.place = new APP.PlaceView(false);  
+
     this.render();
   },    
 

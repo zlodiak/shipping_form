@@ -27,6 +27,11 @@ INFO:
 	border: 1px solid #ccc;
 }
 
+.places_labels_box{
+	padding-bottom: 20px;
+
+	font-size: 12px;
+}
 
 
 /****************************************************************************** GLOBAL_layout */
@@ -34,4 +39,7 @@ INFO:
 
 
 
-/****************************************************************************** GLOBAL_blocks: payment_modal */
+/****************************************************************************** GLOBAL_blocks: places_area */
+.places_area .row{
+	padding-bottom: 20px;
+}
