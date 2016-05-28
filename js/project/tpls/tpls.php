@@ -29,6 +29,8 @@
       </div>
     </div>        
   </form>
+
+  <div id="paymentModalBox"><div>
 </script>
 
 
@@ -45,4 +47,33 @@
       <div class="btn btn-danger btn-xs pull-right delete_place_btn">Удалить место</div>
     </div>
   </div>   
+</script>
+
+
+
+<script type="text/template" id="paymentModalTpl">
+  <!-- Modal payment -->
+  <div class="modal fade payment_modal" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentLabel">
+    <div class="modal-dialog" role="document">     
+      <div class="modal-content">
+        <form class="" id="paymentForm" method="get" action="#" onSubmit="return false;">
+          <fieldset>         
+            <div class="modal-header">
+              <btn type="btn" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></btn>
+              <h4 class="modal-title" id="paymentLabel">Стоимость пересылки</h4>
+            </div>
+
+            <div class="modal-body" id="paymentPriceCont">
+              <span class="price"><%= price %></span>
+              <span class="currency">руб</span>
+            </div>
+
+            <div class="modal-footer">
+              <btn type="btn" class="btn btn-default" data-dismiss="modal">Понятно</btn>
+            </div>
+          </fieldset>
+        </form>          
+      </div>
+    </div>
+  </div>  
 </script>

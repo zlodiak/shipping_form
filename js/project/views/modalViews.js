@@ -1,6 +1,6 @@
 APP.PaymentModalView = Backbone.View.extend({     
 
-  tagName: 'div',
+  el: '#paymentModalBox',
 
   template: _.template($('#paymentModalTpl').html()),
 
