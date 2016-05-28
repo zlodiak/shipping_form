@@ -17,7 +17,15 @@ APP.PlaceView = Backbone.View.extend({
     };
     
     return this;
-  } 
+  }, 
+
+  events:{
+    'click .delete_place_btn' : 'delPlace'
+  },
+
+  delPlace: function() { 
+    this.$el.find('.del_place_box').closest('.place_unit').remove();
+  },   
 
 });
 

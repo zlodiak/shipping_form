@@ -42,7 +42,7 @@
     <div class="col-xs-2">2</div>
     <div class="col-xs-2">2</div>
     <div class="col-xs-3 del_place_box hide">
-      <div class="btn btn-danger btn-xs pull-right">Удалить место</div>
+      <div class="btn btn-danger btn-xs pull-right delete_place_btn">Удалить место</div>
     </div>
   </div>   
 </script>
