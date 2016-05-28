@@ -1,6 +1,7 @@
 APP.PlaceModel = Backbone.Model.extend({
 
   defaults: {
+    idPlace: undefined,
     length: undefined,
     width: undefined,
     height: undefined,
