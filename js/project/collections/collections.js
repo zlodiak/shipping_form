@@ -6,7 +6,7 @@ APP.PlacesCollection = Backbone.Collection.extend({
     var idPlaceMax = 0, 
         idPlaceCurrent;
 
-    APP.placeCollection.each(function(model) { 
+    APP.placesCollection.each(function(model) { 
       idPlaceCurrent = parseInt(model.get('idPlace'));
       if(idPlaceCurrent >= idPlaceMax) { idPlaceMax = idPlaceCurrent + 1 };
     }, this ); 

@@ -1,11 +1,10 @@
 APP.PlaceView = Backbone.View.extend({   
 
   initialize: function(addPlaceBtn) {  
-    var idPlace =     
+    var idPlace = APP.placesCollection.getNewIdPlace();
 
-    this.model = new APP.PlaceModel(); 
+    this.model = new APP.PlaceModel({idPlace: idPlace}); 
     APP.placesCollection.add(this.model);
-    console.log(APP.placesCollection)
 
     this.addPlaceBtn = addPlaceBtn ? false : true;
   },
@@ -31,8 +30,6 @@ APP.PlaceView = Backbone.View.extend({
   delPlace: function() { 
     this.$el.find('.del_place_box').closest('.place_unit').remove();
     this.model.destroy();
-
-    console.log(APP.placesCollection)
   },   
 
 });

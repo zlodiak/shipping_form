@@ -4,7 +4,7 @@
       <div class="col-xs-12"><h1>Расчет стоимости доставки</h1></div>
     </div>
 
-    <div class="row" id="cargoLabelsBox">
+    <div class="row places_labels_box" id="placesLabelsBox">
       <div class="col-xs-1">Длина, м</div>
       <div class="col-xs-1">Ширина, м</div>
       <div class="col-xs-1">Высота, м</div>
