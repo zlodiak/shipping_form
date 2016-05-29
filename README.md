@@ -1,5 +1,5 @@
-live page: http://fh79272k.bget.ru/files/works/calcuator_validation/3/
+live page: http://fh79272k.bget.ru/files/works/shipping_form/1/
 
 form. use backbone and backbone validation plugin.
 
-in result after click on submit-button user see modal window with calculated price
+user have ability after press certain button add dynamic fields to form
