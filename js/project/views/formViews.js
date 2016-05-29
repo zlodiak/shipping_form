@@ -4,6 +4,10 @@ APP.CalcView = Backbone.View.extend({
     APP.placesCollection = new APP.PlacesCollection();  
     this.place = new APP.PlaceView(false);     
 
+    Backbone.Validation.bind(this, {
+      collection: APP.placesCollection
+    });
+
     new APP.PaymentModalView();
 
     this.render();
@@ -29,30 +33,40 @@ APP.CalcView = Backbone.View.extend({
 
   submit: function() { 
     var validationSuccess = true, 
-        data = this.$el.find('#shippForm').serializeObject();
-
-    console.log(data, 'data')
-
-       
+        length,
+        width,
+        height,
+        volume,
+        weight;    
 
     APP.placesCollection.each(function(model) { 
-        model.set(data); 
-        console.log(model, 'model')
-        console.log(model.isValid('length'), 'is valid length')
-        console.log(model.isValid(true), 'is valid model')
+        length = $('#length_' + model.get('idPlace')).val();
+        width = $('#width_' + model.get('idPlace')).val();
+        height = $('#height_' + model.get('idPlace')).val();
+        volume = $('#volume_' + model.get('idPlace')).val();
+        weight = $('#weight_' + model.get('idPlace')).val();
 
-        for(attr in model.attributes) {   
-            if((attr != 'idPlace') && (attr != 'hardBox') && (attr != 'overCargo')) {   
-                console.log(model.isValid(attr), attr)
+        model.set({
+            length: length,
+            width: width,
+            height: height,
+            volume: volume,
+            weight: weight
+        }); 
 
-                if(!model.isValid(attr)) {                  
-                    validationSuccess = false;
-                };
-            };            
-        }        
+        if(
+            !model.isValid('length') ||
+            !model.isValid('width')  ||
+            !model.isValid('height') ||
+            !model.isValid('volume') ||
+            !model.isValid('weight') 
+        ) {                  
+            validationSuccess = false;
+        };    
+     
     }, this ); 
 
-    console.log(validationSuccess)
+    console.log('validationSuccess', validationSuccess )    
 
     //$('#paymentModal').modal('show');
   },

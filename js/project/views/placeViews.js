@@ -15,6 +15,7 @@ APP.PlaceView = Backbone.View.extend({
 
   render: function () {  
     this.$el.html(this.template({idPlace: this.idPlace}));
+    this.$el.attr('id', 'placeUnit_' + this.idPlace);
 
     if(this.addPlaceBtn == false) {
       this.$el.find('.del_place_box').removeClass('hide');

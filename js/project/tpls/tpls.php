@@ -48,7 +48,6 @@
 </script>
 
 
-
 <script type="text/template" id="paymentModalTpl">
   <!-- Modal payment -->
   <div class="modal fade payment_modal" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentLabel">
