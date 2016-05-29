@@ -29,8 +29,6 @@
       </div>
     </div>        
   </form>
-
-  <div id="paymentModalBox"><div>
 </script>
 
 
@@ -64,7 +62,7 @@
             </div>
 
             <div class="modal-body" id="paymentPriceCont">
-              <span class="price"><%= price %></span>
+              <span class="price"></span>
               <span class="currency">руб</span>
             </div>
 
