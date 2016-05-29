@@ -28,11 +28,18 @@ APP.CalcView = Backbone.View.extend({
   },
 
   submit: function() { 
-    var validationSuccess = true;
+    var validationSuccess = true, 
+        data = this.$el.find('#shippForm').serializeObject();
 
-    APP.placesCollection.each(function(model) { //console.log(model, 'model')
-        for(attr in model.attributes) {      
-            if((attr != 'idPlace') && (attr != 'hardBox') && (attr != 'overCargo')) {   console.log(model.isValid(attr))
+    console.log(data, 'data')
+
+    //this.model.set(data);    
+
+    APP.placesCollection.each(function(model) { console.log(model, 'model')
+        for(attr in model.attributes) {   
+            if((attr != 'idPlace') && (attr != 'hardBox') && (attr != 'overCargo')) {   
+                console.log(model.isValid(attr), attr)
+
                 if(!model.isValid(attr)) {                  
                     validationSuccess = false;
                 };
