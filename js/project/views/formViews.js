@@ -1,10 +1,8 @@
 APP.CalcView = Backbone.View.extend({  
 
   initialize: function() {    
-    APP.placesCollection = new APP.PlacesCollection();  console.log(APP.placesCollection)
-    this.place = new APP.PlaceView(false);
-
-    this.place = new APP.PlaceView(false);         
+    APP.placesCollection = new APP.PlacesCollection();  
+    this.place = new APP.PlaceView(false);     
 
     new APP.PaymentModalView();
 
@@ -30,7 +28,21 @@ APP.CalcView = Backbone.View.extend({
   },
 
   submit: function() { 
-    $('#paymentModal').modal('show');
+    var validationSuccess = true;
+
+    APP.placesCollection.each(function(model) { //console.log(model, 'model')
+        for(attr in model.attributes) {      
+            if((attr != 'idPlace') && (attr != 'hardBox') && (attr != 'overCargo')) {   console.log(model.isValid(attr))
+                if(!model.isValid(attr)) {                  
+                    validationSuccess = false;
+                };
+            };            
+        }        
+    }, this ); 
+
+    console.log(validationSuccess)
+
+    //$('#paymentModal').modal('show');
   },
 
   addPlace: function() { 

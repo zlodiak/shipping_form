@@ -20,7 +20,7 @@ APP.PlaceModel = Backbone.Model.extend({
               { pattern: /^[1-9]\d*(\.\d+)?$/, msg: 'Число не может быть нулём' }
             ],     
 
-    width: [ 
+    width:  [ 
               { required: true, msg: 'Поле не может быть пустым' },
               { pattern: 'number', msg: 'Введите число' },
               { pattern: /^[0-9]\d*(\.\d+)?$/, msg: 'Введите положительное число' },
