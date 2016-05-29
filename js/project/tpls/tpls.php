@@ -34,11 +34,11 @@
 
 <script type="text/template" id="placeTpl">
   <div class="row">
-    <div class="col-xs-1"><input type="text" class="form-control" name="length_<%= idPlace %>" id="length_<%= idPlace %>"></div>
-    <div class="col-xs-1"><input type="text" class="form-control" name="width_<%= idPlace %>" id="width_<%= idPlace %>"></div>
-    <div class="col-xs-1"><input type="text" class="form-control" name="height_<%= idPlace %>" id="height_<%= idPlace %>"></div>
-    <div class="col-xs-1"><input type="text" class="form-control" name="volume_<%= idPlace %>" id="volume_<%= idPlace %>"></div>
-    <div class="col-xs-1"><input type="text" class="form-control" name="weight_<%= idPlace %>" id="weight_<%= idPlace %>"></div>
+    <div class="col-xs-1"><input type="text" class="form-control" name="length" id="length_<%= idPlace %>"></div>
+    <div class="col-xs-1"><input type="text" class="form-control" name="width" id="width_<%= idPlace %>"></div>
+    <div class="col-xs-1"><input type="text" class="form-control" name="height" id="height_<%= idPlace %>"></div>
+    <div class="col-xs-1"><input type="text" class="form-control" name="volume" id="volume_<%= idPlace %>"></div>
+    <div class="col-xs-1"><input type="text" class="form-control" name="weight" id="weight_<%= idPlace %>"></div>
     <div class="col-xs-2"><input type="checkbox" name="over_cargo_<%= idPlace %>" id="over_cargo_<%= idPlace %>"></div>
     <div class="col-xs-2"><input type="checkbox" name="hard_box_<%= idPlace %>" id="hard_box_<%= idPlace %>"></div>
     <div class="col-xs-3 del_place_box hide">

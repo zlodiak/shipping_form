@@ -33,9 +33,14 @@ APP.CalcView = Backbone.View.extend({
 
     console.log(data, 'data')
 
-    //this.model.set(data);    
+       
 
-    APP.placesCollection.each(function(model) { console.log(model, 'model')
+    APP.placesCollection.each(function(model) { 
+        model.set(data); 
+        console.log(model, 'model')
+        console.log(model.isValid('length'), 'is valid length')
+        console.log(model.isValid(true), 'is valid model')
+
         for(attr in model.attributes) {   
             if((attr != 'idPlace') && (attr != 'hardBox') && (attr != 'overCargo')) {   
                 console.log(model.isValid(attr), attr)
