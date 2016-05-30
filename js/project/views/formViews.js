@@ -54,15 +54,15 @@ APP.CalcView = Backbone.View.extend({
             weight: weight
         }); 
 
-        if(
-            !model.isValid('length') ||
-            !model.isValid('width')  ||
-            !model.isValid('height') ||
-            !model.isValid('volume') ||
-            !model.isValid('weight') 
-        ) {                  
-            validationSuccess = false;
-        };    
+        for(attr in model.attributes) {   
+            $('#length_' + model.get('idPlace')).removeClass
+
+            if((attr != 'idPlace') && (attr != 'hardBox') && (attr != 'overCargo')) {   
+                if(!model.isValid(attr)) {                  
+                    validationSuccess = false;
+                };
+            };            
+        }            
      
     }, this ); 
 
