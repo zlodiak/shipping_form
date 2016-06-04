@@ -2,10 +2,10 @@ APP.CalcView = Backbone.View.extend({
 
   initialize: function() {    
     APP.placesModelsCollection = new APP.PlacesModelsCollection();   
-    APP.viewsModelsCollection = [];    
+    APP.placesViewsCollection = [];    
 
     this.placeView = new APP.PlaceView(false); 
-    APP.viewsModelsCollection.push(this.placeView);       
+    APP.placesViewsCollection.push(this.placeView);       
 
 /*    Backbone.Validation.bind(this, {
       collection: APP.placesModelsCollection
@@ -37,39 +37,9 @@ APP.CalcView = Backbone.View.extend({
   submit: function() { 
     var validationSuccess = true;   
 
-    _.each(APP.viewsModelsCollection, function(view) {
-      console.log('view v res', view.validate())
-
+    _.each(APP.placesViewsCollection, function(view) {
+      if(view) { console.log('view v res', view.validate()) };
     });     
-
-    //APP.viewsModelsCollection.each(function(model) { 
-      //console.log(model)
-
-/*        length = $('#length_' + model.get('idPlace')).val();
-        width = $('#width_' + model.get('idPlace')).val();
-        height = $('#height_' + model.get('idPlace')).val();
-        volume = $('#volume_' + model.get('idPlace')).val();
-        weight = $('#weight_' + model.get('idPlace')).val();
-
-        model.set({
-            length: length,
-            width: width,
-            height: height,
-            volume: volume,
-            weight: weight
-        }); 
-
-        for(attr in model.attributes) {   
-            $('#length_' + model.get('idPlace')).removeClass
-
-            if((attr != 'idPlace') && (attr != 'hardBox') && (attr != 'overCargo')) {   
-                if(!model.isValid(attr)) {                  
-                    validationSuccess = false;
-                };
-            };            
-        }  */          
-     
-    //}, this ); 
 
     //console.log('validationSuccess', validationSuccess )    
 
@@ -78,7 +48,9 @@ APP.CalcView = Backbone.View.extend({
 
   addPlace: function() { 
     this.placeView = new APP.PlaceView(true);   
-    APP.viewsModelsCollection.push(this.placeView);
+    //console.log(this.placeView.model.get('idPlace'))
+    APP.placesViewsCollection[this.placeView.model.get('idPlace')] = this.placeView;
+    console.log(APP.placesViewsCollection)
 
     this._addPlaceEl();
   }

@@ -32,7 +32,39 @@ APP.PlaceView = Backbone.View.extend({
 
   delPlace: function() { 
     this.$el.find('.del_place_box').closest('.place_unit').remove();
-    this.model.destroy();
+    console.log(this.model, APP.placesViewsCollection)
+    console.log(this.model.get('idPlace'), 'idp this')
+
+    delete APP.placesViewsCollection[this.model.get('idPlace')];
+    this.model.destroy({success: function(model, response) {
+      console.log('mdok')
+    }})
+    console.log(this.model, APP.placesViewsCollection)
+
+
+
+
+
+    
+//APP.placesViewsCollection.remove(this.model)
+
+/*console.log(APP.placesViewsCollection, 'cc')
+this.model.destroy()*/
+
+
+    //if( && ) {  console.log('md')
+      //var self = this;
+
+/*      _.each(APP.placesViewsCollection, function(view) {  
+        console.log('vid', view.model.get('idPlace'))
+        console.log('tid', self.model.get('idPlace'))
+        if(view.model.get('idPlace') == self.model.get('idPlace')) {
+          delete APP.placesViewsCollection[self.model.get('idPlace')]
+        };
+        console.log('view', view)
+        console.log('md1', this.model, APP.placesViewsCollection)
+      }); */  
+    //};
   },   
 
   validate: function() {  
