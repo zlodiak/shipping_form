@@ -2,14 +2,14 @@ APP.CalcView = Backbone.View.extend({
 
   initialize: function() {    
     APP.placesModelsCollection = new APP.PlacesModelsCollection();   
-
     APP.viewsModelsCollection = [];    
+
     this.placeView = new APP.PlaceView(false); 
     APP.viewsModelsCollection.push(this.placeView);       
 
-    Backbone.Validation.bind(this, {
+/*    Backbone.Validation.bind(this, {
       collection: APP.placesModelsCollection
-    });
+    });*/
 
     new APP.PaymentModalView();
 
@@ -35,10 +35,15 @@ APP.CalcView = Backbone.View.extend({
   },
 
   submit: function() { 
-    var validationSuccess = true;    
+    var validationSuccess = true;   
 
-    APP.placesModelsCollection.each(function(model) { 
-      console.log(model)
+    _.each(APP.viewsModelsCollection, function(view) {
+      console.log('view v res', view.validate())
+
+    });     
+
+    //APP.viewsModelsCollection.each(function(model) { 
+      //console.log(model)
 
 /*        length = $('#length_' + model.get('idPlace')).val();
         width = $('#width_' + model.get('idPlace')).val();
@@ -64,9 +69,9 @@ APP.CalcView = Backbone.View.extend({
             };            
         }  */          
      
-    }, this ); 
+    //}, this ); 
 
-    console.log('validationSuccess', validationSuccess )    
+    //console.log('validationSuccess', validationSuccess )    
 
     //$('#paymentModal').modal('show');
   },

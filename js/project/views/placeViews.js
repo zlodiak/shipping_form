@@ -6,6 +6,8 @@ APP.PlaceView = Backbone.View.extend({
     this.model = new APP.PlaceModel({idPlace: this.idPlace}); 
     APP.placesModelsCollection.add(this.model);
 
+    Backbone.Validation.bind(this);
+
     this.addPlaceBtn = addPlaceBtn ? false : true;
   },
 
@@ -33,14 +35,31 @@ APP.PlaceView = Backbone.View.extend({
     this.model.destroy();
   },   
 
-  validate: function() { 
-    length = this.$el.find("input[name='length']").val();
-    width = this.$el.find("input[name='width']").val();
-    height = this.$el.find("input[name='height']").val();
-    volume = this.$el.find("input[name='volume']").val();
-    weight = this.$el.find("input[weight='length']").val();
+  validate: function() {  
+    var validationSuccess = true, 
+        length =  this.$el.find("input[name='length']").val();
+        width =   this.$el.find("input[name='width']").val();
+        height =  this.$el.find("input[name='height']").val();
+        volume =  this.$el.find("input[name='volume']").val();
+        weight =  this.$el.find("input[name='weight']").val();
 
-    console.log(length, width, height, volume, weight);   
+    this.model.set({
+        length: length,
+        width: width,
+        height: height,
+        volume: volume,
+        weight: weight
+    });
+
+    for(attr in this.model.attributes) {   
+      if((attr != 'idPlace') && (attr != 'hardBox') && (attr != 'overCargo')) {   
+        if(!this.model.isValid(attr)) {                  
+          validationSuccess = false;
+        };
+      };            
+    };
+
+    return validationSuccess; 
   }
 
 });
