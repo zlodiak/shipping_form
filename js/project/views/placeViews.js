@@ -33,6 +33,16 @@ APP.PlaceView = Backbone.View.extend({
     this.model.destroy();
   },   
 
+  validate: function() { 
+    length = this.$el.find("input[name='length']").val();
+    width = this.$el.find("input[name='width']").val();
+    height = this.$el.find("input[name='height']").val();
+    volume = this.$el.find("input[name='volume']").val();
+    weight = this.$el.find("input[weight='length']").val();
+
+    console.log(length, width, height, volume, weight);   
+  }
+
 });
 
 

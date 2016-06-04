@@ -1,8 +1,11 @@
 APP.CalcView = Backbone.View.extend({  
 
   initialize: function() {    
-    APP.placesCollection = new APP.PlacesCollection();  
-    this.place = new APP.PlaceView(false);     
+    APP.placesCollection = new APP.PlacesCollection();   
+        
+    APP.viewsCollection = [];    
+    this.placeView = new APP.PlaceView(false); 
+    APP.viewsCollection.push(this.placeView);       
 
     Backbone.Validation.bind(this, {
       collection: APP.placesCollection
@@ -23,7 +26,8 @@ APP.CalcView = Backbone.View.extend({
   },
 
   _addPlaceEl: function() { 
-    this.$el.find('#placesArea').append(this.place.render().el);
+    this.$el.find('#placesArea').append(this.placeView.render().el);
+    console.log(APP.viewsCollection)
   },
 
   events:{
@@ -40,7 +44,9 @@ APP.CalcView = Backbone.View.extend({
         weight;    
 
     APP.placesCollection.each(function(model) { 
-        length = $('#length_' + model.get('idPlace')).val();
+      console.log(model)
+
+/*        length = $('#length_' + model.get('idPlace')).val();
         width = $('#width_' + model.get('idPlace')).val();
         height = $('#height_' + model.get('idPlace')).val();
         volume = $('#volume_' + model.get('idPlace')).val();
@@ -62,7 +68,7 @@ APP.CalcView = Backbone.View.extend({
                     validationSuccess = false;
                 };
             };            
-        }            
+        }  */          
      
     }, this ); 
 
@@ -72,7 +78,9 @@ APP.CalcView = Backbone.View.extend({
   },
 
   addPlace: function() { 
-    this.place = new APP.PlaceView(true);   
+    this.placeView = new APP.PlaceView(true);   
+    APP.viewsCollection.push(this.placeView);
+
     this._addPlaceEl();
   }
 

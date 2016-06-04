@@ -8,7 +8,7 @@ _.extend(Backbone.Validation.callbacks, {
         $group.removeClass('has-error');
         $group.find('.help-block').html('').addClass('hidden');
     },
-    invalid: function (view, attr, error, selector) { console.log(view, attr, error, selector)
+    invalid: function (view, attr, error, selector) {
         var $el = view.$('[name=' + attr + ']'), 
             $group = $el.closest('.form-group');
         
