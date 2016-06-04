@@ -1,4 +1,4 @@
-APP.PlacesCollection = Backbone.Collection.extend({
+APP.PlacesModelsCollection = Backbone.Collection.extend({
 
   model: APP.PlaceModel,
 
@@ -6,7 +6,7 @@ APP.PlacesCollection = Backbone.Collection.extend({
     var idPlaceMax = 0, 
         idPlaceCurrent;
 
-    APP.placesCollection.each(function(model) { 
+    APP.placesModelsCollection.each(function(model) { 
       idPlaceCurrent = parseInt(model.get('idPlace'));
       if(idPlaceCurrent >= idPlaceMax) { idPlaceMax = idPlaceCurrent + 1 };
     }, this ); 

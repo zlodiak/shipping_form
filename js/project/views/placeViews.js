@@ -1,10 +1,10 @@
 APP.PlaceView = Backbone.View.extend({   
 
   initialize: function(addPlaceBtn) {  
-    this.idPlace = APP.placesCollection.getNewIdPlace();
+    this.idPlace = APP.placesModelsCollection.getNewIdPlace();
 
     this.model = new APP.PlaceModel({idPlace: this.idPlace}); 
-    APP.placesCollection.add(this.model);
+    APP.placesModelsCollection.add(this.model);
 
     this.addPlaceBtn = addPlaceBtn ? false : true;
   },

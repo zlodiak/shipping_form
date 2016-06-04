@@ -1,14 +1,14 @@
 APP.CalcView = Backbone.View.extend({  
 
   initialize: function() {    
-    APP.placesCollection = new APP.PlacesCollection();   
-        
-    APP.viewsCollection = [];    
+    APP.placesModelsCollection = new APP.PlacesModelsCollection();   
+
+    APP.viewsModelsCollection = [];    
     this.placeView = new APP.PlaceView(false); 
-    APP.viewsCollection.push(this.placeView);       
+    APP.viewsModelsCollection.push(this.placeView);       
 
     Backbone.Validation.bind(this, {
-      collection: APP.placesCollection
+      collection: APP.placesModelsCollection
     });
 
     new APP.PaymentModalView();
@@ -27,7 +27,6 @@ APP.CalcView = Backbone.View.extend({
 
   _addPlaceEl: function() { 
     this.$el.find('#placesArea').append(this.placeView.render().el);
-    console.log(APP.viewsCollection)
   },
 
   events:{
@@ -36,14 +35,9 @@ APP.CalcView = Backbone.View.extend({
   },
 
   submit: function() { 
-    var validationSuccess = true, 
-        length,
-        width,
-        height,
-        volume,
-        weight;    
+    var validationSuccess = true;    
 
-    APP.placesCollection.each(function(model) { 
+    APP.placesModelsCollection.each(function(model) { 
       console.log(model)
 
 /*        length = $('#length_' + model.get('idPlace')).val();
@@ -79,7 +73,7 @@ APP.CalcView = Backbone.View.extend({
 
   addPlace: function() { 
     this.placeView = new APP.PlaceView(true);   
-    APP.viewsCollection.push(this.placeView);
+    APP.viewsModelsCollection.push(this.placeView);
 
     this._addPlaceEl();
   }
