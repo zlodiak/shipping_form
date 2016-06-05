@@ -39,8 +39,8 @@
     <div class="col-xs-1 form-group"><input type="text" class="form-control" name="height" id="height_<%= idPlace %>"></div>
     <div class="col-xs-1 form-group"><input type="text" class="form-control" name="volume" id="volume_<%= idPlace %>"></div>
     <div class="col-xs-1 form-group"><input type="text" class="form-control" name="weight" id="weight_<%= idPlace %>"></div>
-    <div class="col-xs-2"><input type="checkbox" name="over_cargo_<%= idPlace %>" id="over_cargo_<%= idPlace %>"></div>
-    <div class="col-xs-2"><input type="checkbox" name="hard_box_<%= idPlace %>" id="hard_box_<%= idPlace %>"></div>
+    <div class="col-xs-2 form-group"><input type="checkbox" name="over_cargo" id="over_cargo_<%= idPlace %>"></div>
+    <div class="col-xs-2 form-group"><input type="checkbox" name="hard_box" id="hard_box_<%= idPlace %>"></div>
     <div class="col-xs-3 del_place_box hide">
       <div class="btn btn-danger btn-xs pull-right delete_place_btn">Удалить место</div>
     </div>
@@ -57,7 +57,7 @@
           <fieldset>         
             <div class="modal-header">
               <btn type="btn" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></btn>
-              <h4 class="modal-title" id="paymentLabel">Стоимость пересылки</h4>
+              <h4 class="modal-title" id="paymentLabel">Итого</h4>
             </div>
 
             <div class="modal-body" id="paymentPriceCont">

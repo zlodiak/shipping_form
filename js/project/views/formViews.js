@@ -7,10 +7,6 @@ APP.CalcView = Backbone.View.extend({
     this.placeView = new APP.PlaceView(false); 
     APP.placesViewsCollection.push(this.placeView);       
 
-/*    Backbone.Validation.bind(this, {
-      collection: APP.placesModelsCollection
-    });*/
-
     new APP.PaymentModalView();
 
     this.render();
@@ -41,19 +37,31 @@ APP.CalcView = Backbone.View.extend({
       if(view) { 
         if(view.validate() == false) { validationSuccess = false };
       };
-    });     
+    });    
+
+    this.collectFormData()
 
     if(validationSuccess) { $('#paymentModal').modal('show') }; 
   },
 
   addPlace: function() { 
     this.placeView = new APP.PlaceView(true);   
-    //console.log(this.placeView.model.get('idPlace'))
     APP.placesViewsCollection[this.placeView.model.get('idPlace')] = this.placeView;
-    console.log(APP.placesViewsCollection)
 
     this._addPlaceEl();
-  }
+  },
+
+  collectFormData: function() { 
+    var formData = [];
+
+    _.each(APP.placesViewsCollection, function(view) {
+      if(view) { 
+        console.log(view.getFormData())
+      };
+    });  
+
+
+  }  
 
 });
 
