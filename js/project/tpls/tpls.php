@@ -27,7 +27,9 @@
       <div class="col-xs-12">
         <div class="btn btn-primary" id="submitBtn">Рассчитать</div>
       </div>
-    </div>        
+    </div>   
+
+    <div id="modalsBox"></div> 
   </form>
 </script>
 

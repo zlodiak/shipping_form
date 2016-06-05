@@ -3,7 +3,7 @@ APP.PaymentModalView = Backbone.View.extend({
   initialize: function(formData) {  
     var elem = this.render().el;
 
-    $('body').append(elem); 
+    $('#modalsBox').html(elem); 
 
     this.formData = formData;
 
@@ -18,6 +18,8 @@ APP.PaymentModalView = Backbone.View.extend({
     var positionNum = 1;
 
     this.$el.html(this.template());
+
+    this.$('#modalPositions').empty();
 
     _.each(this.formData, function(line) {
       var modalPositionView = new APP.ModalPositionView();
