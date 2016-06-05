@@ -38,12 +38,12 @@ APP.CalcView = Backbone.View.extend({
     var validationSuccess = true;   
 
     _.each(APP.placesViewsCollection, function(view) {
-      if(view) { console.log('view v res', view.validate()) };
+      if(view) { 
+        if(view.validate() == false) { validationSuccess = false };
+      };
     });     
 
-    //console.log('validationSuccess', validationSuccess )    
-
-    //$('#paymentModal').modal('show');
+    if(validationSuccess) { $('#paymentModal').modal('show') }; 
   },
 
   addPlace: function() { 
