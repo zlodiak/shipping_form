@@ -72,8 +72,8 @@ APP.PlaceView = Backbone.View.extend({
         height =  this.$el.find("input[name='height']").val(),
         volume =  this.$el.find("input[name='volume']").val(),
         weight =  this.$el.find("input[name='weight']").val(),
-        over_cargo =  this.$el.find("input[name='over_cargo']").prop('checked'),
-        hard_box =    this.$el.find("input[name='hard_box']").prop('checked');
+        over_cargo =  this.$el.find("input[name='over_cargo']").prop('checked') ? 'Да' : 'Нет',
+        hard_box =    this.$el.find("input[name='hard_box']").prop('checked') ? 'Да' : 'Нет';
 
     var formData = {
       length: length,
@@ -83,9 +83,7 @@ APP.PlaceView = Backbone.View.extend({
       weight: weight,
       over_cargo: over_cargo,
       hard_box: hard_box
-    }
-
-    console.log(formData)
+    };
 
     return formData;
   }

@@ -60,6 +60,8 @@
       <tr><td>Высота: </td><td><%= line.height %></td></tr>
       <tr><td>Объём: </td><td><%= line.volume %></td></tr>
       <tr><td>Вес: </td><td><%= line.weight %></td></tr>
+      <tr><td>Груз негабаритный: </td><td><%= line.over_cargo %></td></tr>
+      <tr><td>Требуется Ж/У: </td><td><%= line.hard_box %></td></tr>
     </tbody>
   </table>
 </script>

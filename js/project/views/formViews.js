@@ -58,7 +58,6 @@ APP.CalcView = Backbone.View.extend({
     _.each(APP.placesViewsCollection, function(view) {
       if(view) { 
         formData[view.idPlace] = view.getFormData();
-        //console.log('formData', formData)
       };
     });  
 
