@@ -48,6 +48,21 @@
 </script>
 
 
+<script type="text/template" id="modalPositionTpl">
+  <table class="position">
+    <caption>Груз №<%= positionNum %></caption>
+
+    <tbody>
+      <tr><td>Длина: </td><td><%= line.length %></td></tr>
+      <tr><td>Ширина: </td><td><%= line.width %></td></tr>
+      <tr><td>Высота: </td><td><%= line.height %></td></tr>
+      <tr><td>Объём: </td><td><%= line.volume %></td></tr>
+      <tr><td>Вес: </td><td><%= line.weight %></td></tr>
+    </tbody>
+  </table>
+</script>
+
+
 <script type="text/template" id="paymentModalTpl">
   <!-- Modal payment -->
   <div class="modal fade payment_modal" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentLabel">
@@ -60,10 +75,7 @@
               <h4 class="modal-title" id="paymentLabel">Итого</h4>
             </div>
 
-            <div class="modal-body" id="paymentPriceCont">
-              <span class="price"></span>
-              <span class="currency">руб</span>
-            </div>
+            <div class="modal-body" id="modalPositions"></div>
 
             <div class="modal-footer">
               <btn type="btn" class="btn btn-default" data-dismiss="modal">Понятно</btn>

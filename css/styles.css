@@ -39,6 +39,32 @@ INFO:
 
 
 
+/****************************************************************************** GLOBAL_blocks: modal */
+.modal-body{
+	overflow: hidden;
+}
+
+.position{
+	margin-bottom: 20px;
+	width: 30%;
+	float: left;
+	margin-right: 2%;
+}
+
+	.position td:nth-child(2){
+		text-align: center;
+	}
+
+	.position td{
+		width: 50px;
+	}
+
+	.position caption{
+		font-weight: bold;
+		color: #000;
+		text-decoration: underline;
+	}
+
 /****************************************************************************** GLOBAL_blocks: places_area */
 .places_area .row{
 	padding-bottom: 20px;
